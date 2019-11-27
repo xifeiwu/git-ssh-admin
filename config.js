@@ -12,6 +12,7 @@ module.exports = {
   repos: {
     test: groups['admin'],
     'gitosis-admin': groups['admin'],
+    'git-ssh-admin': groups['admin'],
     node: {
       summary: {
         fe: groups['admin'],

@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 "use strict";
 var fs  = require('fs');
-var utils  = require('./utils.js');
 var spawn = require('child_process').spawn;
-const authorize = require('./authorize.js');
-
-const loggerFactory = require('./logger-factory.js');
+var utils  = require('../lib/utils.js');
+const authorize = require('../lib/authorize.js');
+const loggerFactory = require('../lib/logger-factory.js');
 const logger = loggerFactory('git-ssh-server-auth');
 
 var user        = process.argv[2];

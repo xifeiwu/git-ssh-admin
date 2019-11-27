@@ -1,5 +1,5 @@
 {
-  "name": "git-admin",
+  "name": "git-ssh-dmin",
   "version": "1.0.0",
   "description": "git admin",
   "main": "index.js",

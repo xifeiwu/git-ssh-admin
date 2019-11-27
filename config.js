@@ -92,7 +92,6 @@ module.exports = {
     },
     android: {
       HybridApp: groups['admin'],
-      jmdns: groups['admin'],
       StudyAndroid: groups['admin'],
       StudyJava: groups['admin'],
       DevJava: groups['admin'],

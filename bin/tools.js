@@ -15,20 +15,6 @@ commander.command('addUser <pathOfPubicKey>').action(async (pathOfPubicKey) => {
   utils.addCommand(type, key, name);
 });
 
-commander.command('kill <pid>').action(async (pid) => {
-  try {
-    // process.kill(pid, 'SIGTERM');
-    // console.log(pid);
-    const pidKilled = await nodeUtils.killByPid(pid);
-    console.log(`killed: ${pidKilled}`);
-  } catch (err) {
-    console.log(err);
-  }
-  // const cmdPS = nodeUtils.spawnCmdPS();
-  // cmdPS.stdout.pipe(process.stdout);
-  // cmdPS.stderr.pipe(process.stderr);
-});
-
 commander.command('checkSync').action(async () => {
   try {
     utils.check();

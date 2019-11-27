@@ -26,10 +26,13 @@ commander.command('checkSync').action(async() => {
 
 commander.command('repoSize').action(async() => {
   try {
-    const results = utils.repoSize();
+    const results = await utils.repoSize();
+    results.sort((pre, next) => next.size - pre.size);
     results.forEach(it => {
       console.log(`${bytes(it.size)}\t\t${it.dir}`);
-    })
+    });
+    const total = results.reduce((sum, it) => sum + it.size, 0);
+    console.log(`total: ${bytes(total)}`);
   } catch (err) {
     console.log(err);
   }

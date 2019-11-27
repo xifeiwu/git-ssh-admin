@@ -1,7 +1,7 @@
 const groups = {
   admin: {
     isConfig: true,
-    members: ['sudwxf@qq.com']
+    members: ['sduwxf@qq.com']
   }
 }
 

@@ -29,4 +29,12 @@ commander.command('kill <pid>').action(async (pid) => {
   // cmdPS.stderr.pipe(process.stderr);
 });
 
+commander.command('checkSync').action(async () => {
+  try {
+    utils.check();
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 commander.parse(process.argv);

@@ -3,7 +3,7 @@ const path = require('path');
 const groups = {
   admin: {
     isConfig: true,
-    members: ['sduwxf@qq.com']
+    members: ['huffie@re-confirm', 'sduwxf@qq.com']
   }
 }
 

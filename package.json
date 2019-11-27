@@ -1,0 +1,11 @@
+{
+  "name": "git-admin",
+  "version": "1.0.0",
+  "description": "git admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xifei.wu",
+  "license": "ISC"
+}

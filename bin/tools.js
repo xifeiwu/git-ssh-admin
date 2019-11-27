@@ -6,7 +6,7 @@ const utils = require('../lib/utils');
 
 commander.addImplicitHelpCommand();
 
-commander.command('addPubKey <pathOfPubicKey>').action(async (pathOfPubicKey) => {
+commander.command('addUser <pathOfPubicKey>').action(async (pathOfPubicKey) => {
   if (!fs.existsSync(pathOfPubicKey)) {
     console.log(`${pathOfPubicKey} not exist!`);
     return;

@@ -42,6 +42,9 @@ module.exports = {
       },
       vue: {
         'fe-paas': props('admin'),
+        'robot': props('admin', {
+          desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
+        }),
         'assets': props('admin'),
         'components-viewer': props('admin'),
         'nuxt-ts-el-template': props('admin'),

@@ -56,7 +56,9 @@ module.exports = {
         }
       },
       server: {
-        'spa-server-paas': props('admin'),
+        'spa-server-paas': props('admin', {
+          desc: 'spa-server for paas fe'
+        }),
         'paas-assist': props('admin', {
           desc: '高乐天创建的一个eggjs项目，可以参考typescript及模块分割部分，可以删除'
         }),

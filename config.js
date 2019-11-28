@@ -21,7 +21,9 @@ module.exports = {
     'gitosis-admin': props('admin'),
     node: {
       busybox: {
-        'git-ssh-admin': props('admin'),
+        'git-ssh-admin': props('admin', {
+          desc: 'manage git repo by code written by node'
+        }),
         busybox: props('admin'),
         'assist-work': props('admin'),
       },

@@ -12,13 +12,15 @@ module.exports = {
   repos: {
     test: groups['admin'],
     'gitosis-admin': groups['admin'],
-    'git-ssh-admin': groups['admin'],
     node: {
+      busybox: {
+        'git-ssh-admin': groups['admin'],
+        busybox: groups['admin'],
+        'assist-work': groups['admin'],
+      },
       summary: {
         fe: groups['admin'],
         node: groups['admin'],
-        busybox: groups['admin'],
-        'assist-work': groups['admin'],
         modules: groups['admin'],
         ts: groups['admin'],
       },
@@ -53,6 +55,7 @@ module.exports = {
         'shadowsocks-lite': groups['admin'],
         'forever-monitor': groups['admin'],
         ws: groups['admin'],
+        ssh2: groups['admin'],
       },
       'node-server': groups['admin']
     },

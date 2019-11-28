@@ -73,7 +73,9 @@ module.exports = {
         'shadowsocks-lite': props('admin'),
         'forever-monitor': props('admin'),
         ws: props('admin'),
-        ssh2: props('admin'),
+        ssh2: props('admin', {
+          desc: 'show the logic of ssh2'
+        }),
       }
     },
     fe: {

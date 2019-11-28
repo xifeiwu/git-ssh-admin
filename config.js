@@ -33,7 +33,9 @@ module.exports = {
       },
       'webpack-demo': props('admin'),
       'node-server': props('admin'),
-      'assist-server-paas': props('admin'),
+      'assist-server-paas': props('admin', {
+        desc: 'a ssr project with both server and fe'
+      }),
       modules: {
         'koa-md-parser': props('admin'),
         'nirvana-logger': props('admin'),

@@ -37,7 +37,6 @@ module.exports = {
       modules: {
         'koa-md-parser': props('admin'),
         'nirvana-logger': props('admin'),
-        'koa-static-cache': props('admin'),
         formidable: props('admin')
       },
       vue: {

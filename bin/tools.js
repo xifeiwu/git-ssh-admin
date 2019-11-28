@@ -18,7 +18,7 @@ commander.command('addUser <pathOfPubicKey>').action(async (pathOfPubicKey) => {
 
 commander.command('checkSync').action(async() => {
   try {
-    utils.check();
+    utils.checkSync();
   } catch (err) {
     console.log(err);
   }

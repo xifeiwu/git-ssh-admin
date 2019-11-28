@@ -25,7 +25,7 @@ module.exports = {
         ts: groups['admin'],
       },
       'webpack-demo': groups['admin'],
-      'spa-server-paas': groups['admin'],
+      'node-server': groups['admin'],
       'assist-server-paas': groups['admin'],
       modules: {
         'koa-md-parser': groups['admin'],
@@ -46,6 +46,7 @@ module.exports = {
         }
       },
       server: {
+        'spa-server-paas': groups['admin'],
         'paas-assist': groups['admin']
       },
       projects: {
@@ -56,8 +57,7 @@ module.exports = {
         'forever-monitor': groups['admin'],
         ws: groups['admin'],
         ssh2: groups['admin'],
-      },
-      'node-server': groups['admin']
+      }
     },
     fe: {
       assets: groups['admin'],

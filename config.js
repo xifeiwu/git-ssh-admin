@@ -6,7 +6,7 @@ const GROUPS = {
 };
 
 function props(groupList, props) {
-  if (Array.isArray(groupList)) {
+  if (!Array.isArray(groupList)) {
     groupList = [groupList];
   }
   if (!props) {

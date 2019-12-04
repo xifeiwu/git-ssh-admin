@@ -1,31 +1,44 @@
 const path = require('path');
 
-const groups = {
-  admin: {
-    isConfig: true,
-    members: ['huffie@re-confirm', 'sduwxf@qq.com']
-  }
-}
+const GROUPS = {
+  admin: ['huffie@re-confirm', 'sduwxf@qq.com'],
+  finup: ['xifei.wu@finupgroup.com']
+};
 
-function props(group, props) {
+function props(groupList, props) {
+  if (Array.isArray(groupList)) {
+    groupList = [groupList];
+  }
   if (!props) {
     props = {};
   }
-  return Object.assign(props, groups[group]);
+  const groups = {};
+  groupList.forEach(it => {
+    if (GROUPS.hasOwnProperty(it)) {
+      groups[it] = GROUPS[it];
+    } else {
+      throw new Error(`group ${it} not exist!`);
+    }
+  })
+  return Object.assign(props, {
+    IS_CONFIG: true,
+    groups
+  });
 }
 
 module.exports = {
   REPO_DIR: path.resolve(process.env.HOME, 'repositories'),
+  GROUPS,
   repos: {
     test: props('admin'),
     'gitosis-admin': props('admin'),
     node: {
       busybox: {
-        'git-ssh-admin': props('admin', {
+        'git-ssh-admin': props(['admin'], {
           desc: 'manage git repo by code written by node'
         }),
-        busybox: props('admin'),
-        'assist-work': props('admin'),
+        busybox: props(['admin', 'finup']),
+        'assist-work': props(['admin', 'finup']),
       },
       summary: {
         fe: props('admin'),
@@ -166,7 +179,7 @@ module.exports = {
     const traverse = (prefix = '', obj) => {
       var results = [];
       for (let key in obj) {
-        if (obj[key].isConfig) {
+        if (obj[key].IS_CONFIG) {
           results.push(prefix.length > 0 ? `${prefix}/${key}` : `${key}`);
         } else {
           results = results.concat(traverse(prefix.length > 0 ? `${prefix}/${key}` : `${key}`, obj[key]));
@@ -181,7 +194,7 @@ module.exports = {
     const traverse = (prefix = '', obj) => {
       var results = {};
       for (let key in obj) {
-        if (obj[key].isConfig) {
+        if (obj[key].IS_CONFIG) {
           results[prefix.length > 0 ? `${prefix}/${key}` : `${key}`] = obj[key];
         } else {
           Object.assign(results, traverse(prefix.length > 0 ? `${prefix}/${key}` : `${key}`, obj[key]));

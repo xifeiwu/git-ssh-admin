@@ -57,7 +57,7 @@ module.exports = {
         formidable: props('admin')
       },
       vue: {
-        'fe-paas': props('admin'),
+        'fe-paas': props(['admin', 'finup']),
         'robot': props('admin', {
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
         }),

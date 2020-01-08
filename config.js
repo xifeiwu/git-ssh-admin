@@ -89,6 +89,8 @@ module.exports = {
         'shadowsocks-lite': props('admin'),
         'forever-monitor': props('admin'),
         ws: props('admin'),
+        socksv5: props('admin'),
+        forge: props('admin'),
         ssh2: props('admin', {
           desc: 'show the logic of ssh2'
         }),

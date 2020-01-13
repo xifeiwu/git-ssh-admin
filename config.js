@@ -110,6 +110,7 @@ module.exports = {
       'show-qrcode': props('admin'),
       'content-scanner': props('admin'),
       busybox: props('admin'),
+      assist: props('admin'),
       'use-case': props('admin'),
     },
     java: {

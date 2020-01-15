@@ -118,6 +118,11 @@ module.exports = {
       'com-server': props('admin'),
       springbootdemo: props('admin'),
       SpringMVCDemo: props('admin'),
+      projects: {
+        galaxy: props(['admin'], {
+          desc: '凡普paas云平台后端'
+        })
+      }
     },
     python: {
       summary: {

@@ -72,7 +72,7 @@ module.exports = {
         }
       },
       server: {
-        'spa-server-paas': props('admin', {
+        'spa-server': props('admin', {
           desc: 'spa-server for paas fe'
         }),
         'paas-assist': props('admin', {

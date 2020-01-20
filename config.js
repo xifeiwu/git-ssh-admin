@@ -99,7 +99,7 @@ module.exports = {
     fe: {
       assets: props('admin'),
       calendar: props('admin'),
-      siri: props('admin'),
+      sage: props('admin'),
       'zhangxueli.site': props('admin'),
       'show-case': props('admin'),
       art: {

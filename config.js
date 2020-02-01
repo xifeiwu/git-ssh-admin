@@ -97,6 +97,7 @@ module.exports = {
       }
     },
     fe: {
+      website: props('admin'),
       assets: props('admin'),
       calendar: props('admin'),
       sage: props('admin'),

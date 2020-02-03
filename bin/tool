@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const commander = require('busybox/node_modules/commander');
-const bytes = require('busybox/node_modules/bytes');
+const commander = require('commander');
+const bytes = require('bytes');
 const utils = require('../lib/utils');
 
 commander.addImplicitHelpCommand();

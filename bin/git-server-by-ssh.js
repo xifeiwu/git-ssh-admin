@@ -47,19 +47,20 @@ async function run(user, fingerprint, command, repo) {
     });
 
     const getStreamLogger = (tag) => {
-var size = 0;
-return new stream.Transform({
-transform(chunk, enc, cb) {
-size += chunk.length;
-(tag == 'stderr' || tag == 'stdin' || (tag == 'stdout' && size < 500)) &&loggerChild(`(${tag}) ${chunk.toString()}`);
-cb(null, chunk);
-loggerChild(`(${tag})size: ${size}`);
-},
-flush() {
-loggerChild(`(${tag}): end of child process, size: ${size}`);
-}
-})
-}
+      var size = 0;
+      return new stream.Transform({
+        transform(chunk, enc, cb) {
+          size += chunk.length;
+          (tag == 'stderr' || tag == 'stdin' || (tag == 'stdout' && size < 500)) &&loggerChild(`(${tag}) ${chunk.toString()}`);
+          cb(null, chunk);
+          loggerChild(`(${tag})size: ${size}`);
+        },
+        flush() {
+          loggerChild(`(${tag}): end of child process, size: ${size}`);
+        }
+      });
+    }
+
     process.stdin.pipe(getStreamLogger('stdin')).pipe(child.stdin);
     child.stderr.pipe(getStreamLogger('stderr')).pipe(process.stderr);
     child.stdout.pipe(getStreamLogger('stdout')).pipe(process.stdout);

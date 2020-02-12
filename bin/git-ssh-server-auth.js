@@ -2,10 +2,12 @@
 "use strict";
 var fs  = require('fs');
 var spawn = require('child_process').spawn;
+var stream = require('stream');
 var utils  = require('../lib/utils.js');
 const authorize = require('../lib/authorize.js');
 const loggerFactory = require('../lib/logger-factory.js');
-const logger = loggerFactory('git-ssh-server-auth');
+const logger = loggerFactory('auth');
+const loggerChild = loggerFactory('auth:child');
 
 var user        = process.argv[2];
 var fingerprint = process.argv[3];
@@ -43,11 +45,27 @@ async function run(user, fingerprint, command, repo) {
     child.on('exit', function(rc) {
       process.exit(rc);
     });
-    process.stdin.pipe(child.stdin);
-    child.stderr.pipe(process.stderr);
-    child.stdout.pipe(process.stdout);
+
+    const getStreamLogger = (tag) => {
+var size = 0;
+return new stream.Transform({
+transform(chunk, enc, cb) {
+size += chunk.length;
+(tag == 'stderr' || tag == 'stdin' || (tag == 'stdout' && size < 500)) &&loggerChild(`(${tag}) ${chunk.toString()}`);
+cb(null, chunk);
+loggerChild(`(${tag})size: ${size}`);
+},
+flush() {
+loggerChild(`(${tag}): end of child process, size: ${size}`);
+}
+})
+}
+    process.stdin.pipe(getStreamLogger('stdin')).pipe(child.stdin);
+    child.stderr.pipe(getStreamLogger('stderr')).pipe(process.stderr);
+    child.stdout.pipe(getStreamLogger('stdout')).pipe(process.stdout);
     child.unref();
   } catch (err) {
+    logger(err);
     console.error(`error: ${err.toString()}`);
     process.exit(1);
   }

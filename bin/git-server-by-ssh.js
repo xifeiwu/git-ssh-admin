@@ -6,8 +6,8 @@ var stream = require('stream');
 var utils  = require('../lib/utils.js');
 const authorize = require('../lib/authorize.js');
 const loggerFactory = require('../lib/logger-factory.js');
-const logger = loggerFactory('auth');
-const loggerChild = loggerFactory('auth:child');
+const logger = loggerFactory('by-ssh');
+const loggerChild = loggerFactory('by-ssh:child_process');
 
 var user        = process.argv[2];
 var fingerprint = process.argv[3];

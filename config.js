@@ -62,7 +62,7 @@ module.exports = {
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
         }),
         'assets': props('admin'),
-        'components-viewer': props('admin'),
+        'show-case': props('admin'),
         'nuxt-ts-el-template': props('admin'),
         'vue-mdEditor': props('admin'),
         'vue-awesome': props('admin'),
@@ -172,8 +172,6 @@ module.exports = {
     },
     work: {
       workcode: props('admin'),
-      workenv: props('admin'),
-      worklog: props('admin'),
     },
     finup: {
       benew: props('admin'),

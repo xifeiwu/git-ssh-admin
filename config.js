@@ -27,7 +27,7 @@ function props(groupList, props) {
 }
 
 module.exports = {
-  REPO_DIR: path.resolve(process.env.HOME, 'repositories'),
+  REPO_DIR: path.resolve(__dirname, '../repositories'),
   GROUPS,
   repos: {
     test: props('admin'),

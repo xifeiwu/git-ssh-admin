@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+const readline = require('readline');
 const commander = require('commander');
 const bytes = require('bytes');
 const utils = require('../lib/utils');
+const config = require('../config.js');
 
 commander.addImplicitHelpCommand();
 
@@ -37,5 +39,40 @@ commander.command('repoSize').action(async() => {
     console.log(err);
   }
 });
+
+commander.command('start-http-server')
+  .option('-d, --repo-dir <dir>', 'repoDir for repositories')
+  .action(async (command) => {
+    const {repoDir} = command;
+    const REPO_DIR = repoDir ? repoDir : config.REPO_DIR;
+
+    try {
+      fs.statSync(REPO_DIR);
+    } catch (err) {
+      throw new Error(`REPO_DIR ${REPO_DIR} not exist!`);
+      return;
+    }
+
+    const auth = {
+      username: '',
+      password: ''
+    }
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    for (let key in auth) {
+      auth[key] = await new Promise((resolve, reject) => {
+        rl.question(`${key}:`, (answer) => {
+          resolve(answer);
+        });
+      });
+    }
+    rl.close();
+
+    const GitServer = require('../lib/git-server-by-http.js');
+    (new GitServer()).start(REPO_DIR, auth);
+  });
+
 
 commander.parse(process.argv);

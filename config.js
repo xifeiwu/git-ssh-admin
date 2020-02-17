@@ -5,15 +5,15 @@ const GROUPS = {
   finup: ['xifei.wu@finupgroup.com']
 };
 
-function props(groupList, props) {
-  if (!Array.isArray(groupList)) {
-    groupList = [groupList];
+function props({allowedGroup, props}) {
+  if (!Array.isArray(allowedGroup)) {
+    allowedGroup = [allowedGroup];
   }
   if (!props) {
     props = {};
   }
   const groups = {};
-  groupList.forEach(it => {
+  allowedGroup.forEach(it => {
     if (GROUPS.hasOwnProperty(it)) {
       groups[it] = GROUPS[it];
     } else {

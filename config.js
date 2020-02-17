@@ -1,186 +1,205 @@
 const path = require('path');
+const commonUtils = new (require('./lib/utils-common.js'));
 
-const GROUPS = {
-  admin: ['huffie@re-confirm', 'sduwxf@qq.com'],
-  finup: ['xifei.wu@finupgroup.com']
-};
-
-function props({allowedGroup, props}) {
-  if (!Array.isArray(allowedGroup)) {
-    allowedGroup = [allowedGroup];
-  }
-  if (!props) {
-    props = {};
-  }
-  const groups = {};
-  allowedGroup.forEach(it => {
-    if (GROUPS.hasOwnProperty(it)) {
-      groups[it] = GROUPS[it];
-    } else {
-      throw new Error(`group ${it} not exist!`);
-    }
-  })
-  return Object.assign(props, {
+// {allowedGroup, props}
+function props(config) {
+  const GROUPS = {
+    admin: ['huffie@re-confirm', 'sduwxf@qq.com'],
+    company: ['xifei.wu@finupgroup.com']
+  };
+  const defaultConfig = {
     IS_CONFIG: true,
-    groups
-  });
+    groups: {
+      admin: ['read', 'write']
+    },
+    desc: ''
+  }
+  config = config ? commonUtils.deepMerge(defaultConfig, config) : defaultConfig;
+  for (let group in config.groups) {
+    if (GROUPS.hasOwnProperty(group)) {
+      config.groups[group] = {
+        members: GROUPS[group],
+        permissions: config.groups[group]
+      }
+    } else {
+      throw new Error(`group ${group} not exist in GROUPS`);
+    }
+  }
+  /**
+   * format of config:
+   {
+     IS_CONFIG: boolean,
+     groups: {
+       group: {
+          members: [],
+          permissions: []
+       }
+     },
+     desc: ''
+   }
+   */
+  return config;
 }
 
 module.exports = {
   REPO_DIR: path.resolve(__dirname, '../repositories'),
-  GROUPS,
+  // GROUPS,
   repos: {
-    test: props('admin'),
-    'gitosis-admin': props('admin'),
+    test: props(),
+    'gitosis-admin': props(),
     node: {
       busybox: {
-        'git-admin': props(['admin'], {
+        'git-admin': props({
           desc: 'manage git repo by code written by node'
         }),
-        busybox: props(['admin', 'finup']),
-        'assist-work': props(['admin', 'finup']),
+        busybox: props({
+          groups: {
+            company: ['read']
+          }
+        }),
+        'assist-work': props(),
       },
       summary: {
-        fe: props('admin'),
-        node: props('admin'),
-        modules: props('admin'),
-        ts: props('admin'),
+        fe: props(),
+        node: props(),
+        modules: props(),
+        ts: props(),
       },
-      'webpack-demo': props('admin'),
-      'node-server': props('admin'),
-      'assist-server-paas': props('admin', {
+      'webpack-demo': props(),
+      'node-server': props(),
+      'assist-server-paas': props({
         desc: 'a ssr project with both server and fe'
       }),
       modules: {
-        'koa-md-parser': props('admin'),
-        'nirvana-logger': props('admin'),
-        formidable: props('admin')
+        'koa-md-parser': props(),
+        'nirvana-logger': props(),
+        formidable: props()
       },
       vue: {
-        'fe-paas': props(['admin', 'finup']),
-        'wmail-web': props(['admin', 'finup']),
-        'robot': props('admin', {
+        'fe-paas': props(),
+        'wmail-web': props(),
+        'robot': props({
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
         }),
-        'assets': props('admin'),
-        'show-case': props('admin'),
-        'nuxt-ts-el-template': props('admin'),
-        'vue-mdEditor': props('admin'),
-        'vue-awesome': props('admin'),
+        'assets': props(),
+        'show-case': props(),
+        'nuxt-ts-el-template': props(),
+        'vue-mdEditor': props(),
+        'vue-awesome': props(),
         components: {
-          'element-ui': props('admin'),
-          custom: props('admin')
+          'element-ui': props(),
+          custom: props()
         }
       },
       server: {
-        'spa-server': props('admin', {
+        'spa-server': props({
           desc: 'spa-server for paas fe'
         }),
-        'paas-assist': props('admin', {
+        'paas-assist': props({
           desc: '高乐天创建的一个eggjs项目，可以参考typescript及模块分割部分，可以删除'
         }),
-        'assist-server': props('admin', {
+        'assist-server': props({
           desc: 'node server to assist some paas logic, such as cas login'
         }),
       },
       projects: {
-        'cnpmjs.org': props('admin'),
-        'angry-bird': props('admin'),
-        piaofang: props('admin'),
-        'shadowsocks-lite': props('admin'),
-        'forever-monitor': props('admin'),
-        ws: props('admin'),
-        socksv5: props('admin'),
-        forge: props('admin'),
-        ssh2: props('admin', {
+        'cnpmjs.org': props(),
+        'angry-bird': props(),
+        piaofang: props(),
+        'shadowsocks-lite': props(),
+        'forever-monitor': props(),
+        ws: props(),
+        socksv5: props(),
+        forge: props(),
+        ssh2: props({
           desc: 'show the logic of ssh2'
         }),
       }
     },
     fe: {
-      website: props('admin'),
-      assets: props('admin'),
-      calendar: props('admin'),
-      sage: props('admin'),
-      'zhangxueli.site': props('admin'),
-      'show-case': props('admin'),
+      website: props(),
+      assets: props(),
+      calendar: props(),
+      sage: props(),
+      'zhangxueli.site': props(),
+      'show-case': props(),
       art: {
-        'generate-iconfont': props('admin')
+        'generate-iconfont': props()
       }
     },
     chrome: {
-      'show-qrcode': props('admin'),
-      'content-scanner': props('admin'),
-      busybox: props('admin'),
-      assist: props('admin'),
-      'use-case': props('admin'),
+      'show-qrcode': props(),
+      'content-scanner': props(),
+      busybox: props(),
+      assist: props(),
+      'use-case': props(),
     },
     java: {
-      summary: props('admin'),
-      'com-server': props('admin'),
-      springbootdemo: props('admin'),
-      SpringMVCDemo: props('admin'),
+      summary: props(),
+      'com-server': props(),
+      springbootdemo: props(),
+      SpringMVCDemo: props(),
       projects: {
-        galaxy: props(['admin'], {
+        galaxy: props({
           desc: '凡普paas云平台后端'
         })
       }
     },
     python: {
       summary: {
-        prime: props('admin'),
-        vendor: props('admin'),
+        prime: props(),
+        vendor: props(),
       },
-      'schedule-task': props('admin'),
-      'benew-bi-server': props('admin'),
-      'benew-bi-analyze': props('admin'),
-      'news-task': props('admin'),
-      'flask-server': props('admin'),
-      'cdos-update': props('admin'),
+      'schedule-task': props(),
+      'benew-bi-server': props(),
+      'benew-bi-analyze': props(),
+      'news-task': props(),
+      'flask-server': props(),
+      'cdos-update': props(),
     },
     android: {
-      HybridApp: props('admin'),
-      StudyAndroid: props('admin'),
-      StudyJava: props('admin'),
-      DevJava: props('admin'),
-      solitaire: props('admin'),
-      photopuzzle: props('admin'),
-      'demo-puzzle': props('admin'),
-      llk: props('admin'),
-      eatdot: props('admin'),
+      HybridApp: props(),
+      StudyAndroid: props(),
+      StudyJava: props(),
+      DevJava: props(),
+      solitaire: props(),
+      photopuzzle: props(),
+      'demo-puzzle': props(),
+      llk: props(),
+      eatdot: props(),
     },
     apple: {
-      from_start_to_app_store: props('admin'),
-      grammar: props('admin'),
-      'ios-demo': props('admin'),
+      from_start_to_app_store: props(),
+      grammar: props(),
+      'ios-demo': props(),
     },
     cpp: {
-      'app-store-client': props('admin')
+      'app-store-client': props()
     },
     bash: {
-      'linux-distro-build': props('admin')
+      'linux-distro-build': props()
     },
     php: {
-      'exam-parser': props('admin')
+      'exam-parser': props()
     },
     huffie: {
-      huffie: props('admin'),
-      blog: props('admin'),
-      blog_site: props('admin'),
-      bash: props('admin'),
-      company: props('admin'),
-      'xifeiwu.github.io': props('admin')
+      huffie: props(),
+      blog: props(),
+      blog_site: props(),
+      bash: props(),
+      company: props(),
+      'xifeiwu.github.io': props()
     },
     work: {
-      workcode: props('admin'),
+      workcode: props(),
     },
     finup: {
-      benew: props('admin'),
-      'quant-api': props('admin'),
-      'benew-server': props('admin'),
-      'spring-boot-demo': props('admin'),
-      'benew-android': props('admin'),
-      'benew-quant': props('admin'),
+      benew: props(),
+      'quant-api': props(),
+      'benew-server': props(),
+      'spring-boot-demo': props(),
+      'benew-android': props(),
+      'benew-quant': props(),
     }
   },
   get repoList() {

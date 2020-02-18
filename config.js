@@ -82,7 +82,9 @@ module.exports = {
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
         }),
         'assets': props(),
-        'show-case': props(),
+        'vue-projects': props({
+          desc: '多个vue项目，包括show-case, assist-fe等，放到同一个项目主要是为了共用仓库和webpack配置，减少冗余项目。'
+        }),
         'nuxt-ts-el-template': props(),
         'vue-mdEditor': props(),
         'vue-awesome': props(),

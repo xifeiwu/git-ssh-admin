@@ -195,6 +195,11 @@ module.exports = {
     work: {
       workcode: props(),
     },
+    pwrd: {
+      api: props({
+        desc: 'api接口相关：接口描述；接口数据moack，接口调用等'
+      }),
+    },
     finup: {
       benew: props(),
       'quant-api': props(),

@@ -77,7 +77,6 @@ module.exports = {
       },
       vue: {
         'fe-paas': props(),
-        'wmail-web': props(),
         'robot': props({
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
         }),
@@ -196,8 +195,11 @@ module.exports = {
       workcode: props(),
     },
     pwrd: {
-      api: props({
-        desc: 'api接口相关：接口描述；接口数据moack，接口调用等'
+      docs: props({
+        desc: 'api接口相关：接口描述；接口数据moack，接口调用等；mail项目总结文档，代码片段等'
+      }),
+      mail: props({
+        desc: '完美邮箱项目'
       }),
     },
     finup: {

@@ -48,6 +48,7 @@ module.exports = {
     test: props(),
     'gitosis-admin': props(),
     node: {
+      assets: props(),
       busybox: {
         'git-admin': props({
           desc: 'manage git repo by code written by node'
@@ -80,7 +81,9 @@ module.exports = {
         'robot': props({
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
         }),
-        'assets': props(),
+        'assets': props({
+          desc: 'vue项目使用的assets，TODO: delete, instead by node/assets'
+        }),
         'vue-projects': props({
           desc: '多个vue项目，包括show-case, assist-fe等，放到同一个项目主要是为了共用仓库和webpack配置，减少冗余项目。'
         }),
@@ -119,7 +122,6 @@ module.exports = {
     },
     fe: {
       website: props(),
-      assets: props(),
       calendar: props(),
       sage: props(),
       'zhangxueli.site': props(),

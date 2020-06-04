@@ -48,10 +48,15 @@ module.exports = {
     test: props(),
     'gitosis-admin': props(),
     node: {
-      assets: props(),
+      assets: props({
+        desc: 'assets used for both node, vue and fe'
+      }),
       busybox: {
         'git-admin': props({
           desc: 'manage git repo by code written by node'
+        }),
+        'proxy-server': props({
+          desc: 'server with custom proxy'
         }),
         busybox: props({
           groups: {

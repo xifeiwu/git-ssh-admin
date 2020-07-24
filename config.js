@@ -79,7 +79,8 @@ module.exports = {
       modules: {
         'koa-md-parser': props(),
         'nirvana-logger': props(),
-        formidable: props()
+        formidable: props(),
+        'dom-align': props(),
       },
       vue: {
         'fe-paas': props(),

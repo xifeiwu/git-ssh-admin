@@ -81,6 +81,8 @@ module.exports = {
         'nirvana-logger': props(),
         formidable: props(),
         'dom-align': props(),
+        'impress.js': props(),
+        'markdown-it': props(),
       },
       vue: {
         'fe-paas': props(),

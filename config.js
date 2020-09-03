@@ -37,6 +37,7 @@ function props(config) {
      },
      desc: ''
    }
+   * means this repo can be access by members of group with permission read or(and) write
    */
   return config;
 }
@@ -52,24 +53,32 @@ module.exports = {
         desc: 'assets used for both node, vue and fe'
       }),
       busybox: {
-        'git-admin': props({
-          desc: 'manage git repo by code written by node'
-        }),
-        'proxy-server': props({
-          desc: 'server with custom proxy'
+        'assist-work': props({
+          desc: '辅助日常开发'
         }),
         busybox: props({
           groups: {
             company: ['read']
           }
         }),
-        'assist-work': props(),
+        'git-admin': props({
+          desc: 'manage git repo by code written by node'
+        }),
+        'proxy-server': props({
+          desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发'
+        }),
       },
       summary: {
-        fe: props(),
-        node: props(),
+        fe: props({
+          desc: '前端代码总结'
+        }),
+        node: props({
+          desc: 'node代码总结'
+        }),
         modules: props(),
-        ts: props(),
+        ts: props({
+          desc: '学习ts语法'
+        }),
       },
       'webpack-demo': props(),
       'node-server': props(),

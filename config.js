@@ -94,6 +94,7 @@ module.exports = {
         'markdown-it': props(),
       },
       vue: {
+        'vue_abc': props(),
         'fe-paas': props(),
         'robot': props({
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'

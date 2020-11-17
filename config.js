@@ -161,9 +161,6 @@ module.exports = {
       springbootdemo: props(),
       SpringMVCDemo: props(),
       projects: {
-        galaxy: props({
-          desc: '凡普paas云平台后端'
-        })
       }
     },
     python: {

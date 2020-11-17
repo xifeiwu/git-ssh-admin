@@ -47,7 +47,6 @@ module.exports = {
   // GROUPS,
   repos: {
     test: props(),
-    'gitosis-admin': props(),
     node: {
       assets: props({
         desc: 'assets used for both node, vue and fe'
@@ -65,7 +64,7 @@ module.exports = {
           desc: 'manage git repo by code written by node'
         }),
         'proxy-server': props({
-          desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发'
+          desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发，使用ts开发'
         }),
       },
       summary: {
@@ -95,7 +94,9 @@ module.exports = {
       },
       vue: {
         'vue_abc': props(),
-        'fe-paas': props(),
+        'fe-paas': props({
+          desc: '量化空间paas前端项目'
+        }),
         'robot': props({
           desc: '结构比较成熟，使用typescript，基于nuxt的一个项目，使用到了pont（好用但不好控）'
         }),

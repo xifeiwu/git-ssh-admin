@@ -218,16 +218,11 @@ module.exports = {
       docs: props({
         desc: 'api接口相关：接口描述；接口数据moack，接口调用等；mail项目总结文档，代码片段等'
       }),
-      mail: props({
-        desc: '完美邮箱项目'
-      }),
     },
     finup: {
       benew: props(),
       'quant-api': props(),
-      'benew-server': props(),
       'spring-boot-demo': props(),
-      'benew-android': props(),
       'benew-quant': props(),
     }
   },

@@ -108,7 +108,6 @@ module.exports = {
         }),
         'nuxt-ts-el-template': props(),
         'vue-mdEditor': props(),
-        'vue-awesome': props(),
         components: {
           'element-ui': props(),
           custom: props()

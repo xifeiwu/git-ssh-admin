@@ -93,7 +93,9 @@ module.exports = {
         'markdown-it': props(),
       },
       vue: {
-        'vue_abc': props(),
+        'vue_abc': props({
+          desc: '学习vue'
+        }),
         'fe-paas': props({
           desc: '量化空间paas前端项目'
         }),
@@ -133,6 +135,7 @@ module.exports = {
         ws: props(),
         socksv5: props(),
         forge: props(),
+        vue: props(),
         ssh2: props({
           desc: 'show the logic of ssh2'
         }),

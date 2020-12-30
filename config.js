@@ -135,6 +135,7 @@ module.exports = {
         ws: props(),
         socksv5: props(),
         forge: props(),
+        snabbdom: props(),
         vue: props(),
         ssh2: props({
           desc: 'show the logic of ssh2'

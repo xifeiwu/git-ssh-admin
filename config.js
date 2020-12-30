@@ -164,8 +164,6 @@ module.exports = {
       'com-server': props(),
       springbootdemo: props(),
       SpringMVCDemo: props(),
-      projects: {
-      }
     },
     python: {
       summary: {

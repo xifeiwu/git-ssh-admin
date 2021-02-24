@@ -46,7 +46,9 @@ module.exports = {
   REPO_DIR: path.resolve(__dirname, '../repositories'),
   // GROUPS,
   repos: {
-    test: props(),
+    test: props({
+      desc: '一个非常小的git仓库，用于测试git指令'
+    }),
     node: {
       assets: props({
         desc: 'assets used for both node, vue and fe'

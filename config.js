@@ -49,6 +49,10 @@ module.exports = {
     test: props({
       desc: '一个非常小的git仓库，用于测试git指令'
     }),
+    bash: {
+      summary: props(),
+      'linux-distro-build': props(),
+    },
     node: {
       assets: props({
         desc: 'assets used for both node, vue and fe'
@@ -198,9 +202,6 @@ module.exports = {
     cpp: {
       'app-store-client': props()
     },
-    bash: {
-      'linux-distro-build': props()
-    },
     php: {
       'exam-parser': props()
     },
@@ -208,7 +209,6 @@ module.exports = {
       huffie: props(),
       blog: props(),
       blog_site: props(),
-      bash: props(),
       company: props(),
       'xifeiwu.github.io': props()
     },

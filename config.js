@@ -56,6 +56,11 @@ module.exports = {
         desc: '基于linux发行版（linuxmint），重新定制iso镜像',
       }),
     },
+    linux: {
+      summary: props({
+        desc: ''
+      }),
+    },
     node: {
       assets: props({
         desc: 'assets used for both node, vue and fe'

@@ -52,6 +52,9 @@ module.exports = {
     bash: {
       summary: props(),
       'linux-distro-build': props(),
+      'rebuild-distro': props({
+        desc: '基于linux发行版（linuxmint），重新定制iso镜像',
+      }),
     },
     node: {
       assets: props({

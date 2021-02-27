@@ -53,7 +53,7 @@ module.exports = {
       summary: props(),
       'linux-distro-build': props(),
       projects: {
-       'rebuild-distro': props({
+       'ubuntu-custom': props({
         desc: '基于linux发行版（linuxmint），重新定制iso镜像',
       }),
      },

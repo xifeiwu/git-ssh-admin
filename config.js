@@ -59,9 +59,17 @@ module.exports = {
       summary: props({
         desc: ''
       }),
-       'ubuntu': props({
-        desc: '基于linux发行版（linuxmint），重新定制iso镜像',
-      }),
+      ubuntu: {
+        summary: props({
+          desc: '基于linux发行版（linuxmint），重新定制iso镜像',
+        }),
+        'cdos-update': props({
+          desc: '一个非常精简的纯shell脚本实现的linuxmin更新相关包的实现逻辑。主要价值在于了解deb打包方式。'
+        }),
+        'cdosupdate': props({
+          desc: '基于linuxmint的mintupdate包，修改了部分逻辑。主要价值在了解linuxmint基于pygtk图形化界面的实现风格。'
+        }),
+      }
     },
     node: {
       assets: props({
@@ -191,7 +199,6 @@ module.exports = {
       'benew-bi-analyze': props(),
       'news-task': props(),
       'flask-server': props(),
-      'cdos-update': props(),
     },
     android: {
       HybridApp: props(),

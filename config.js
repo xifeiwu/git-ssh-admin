@@ -53,14 +53,14 @@ module.exports = {
       summary: props(),
       'linux-distro-build': props(),
       projects: {
-       'ubuntu-custom': props({
-        desc: '基于linux发行版（linuxmint），重新定制iso镜像',
-      }),
      },
     },
     linux: {
       summary: props({
         desc: ''
+      }),
+       'ubuntu': props({
+        desc: '基于linux发行版（linuxmint），重新定制iso镜像',
       }),
     },
     node: {

@@ -59,6 +59,9 @@ module.exports = {
       summary: props({
         desc: ''
       }),
+      'ubuntu-rebuild': props({
+        desc: 'iscas定制cdos的源码'
+      }),
       ubuntu: {
         summary: props({
           desc: '基于linux发行版（linuxmint），重新定制iso镜像',
@@ -207,7 +210,9 @@ module.exports = {
       DevJava: props(),
       solitaire: props(),
       photopuzzle: props(),
-      'demo-puzzle': props(),
+      'demo-puzzle': props({
+        desc: '教学用的android拼图游戏'
+      }),
       llk: props(),
       eatdot: props(),
     },

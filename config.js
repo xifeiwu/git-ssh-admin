@@ -75,6 +75,20 @@ module.exports = {
       }
     },
     node: {
+      start: {
+        fe: props({
+          desc: '前端代码总结'
+        }),
+        summary: props({
+          desc: 'node代码总结'
+        }),
+        modules: props({
+          desc: '展示常用node modules使用方式'
+        }),
+        ts: props({
+          desc: '学习ts语法'
+        }),
+      },
       assets: props({
         desc: 'assets used for both node, vue and fe'
       }),
@@ -92,18 +106,6 @@ module.exports = {
         }),
         'proxy-server': props({
           desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发，使用ts开发'
-        }),
-      },
-      summary: {
-        fe: props({
-          desc: '前端代码总结'
-        }),
-        node: props({
-          desc: 'node代码总结'
-        }),
-        modules: props(),
-        ts: props({
-          desc: '学习ts语法'
         }),
       },
       'webpack-demo': props(),

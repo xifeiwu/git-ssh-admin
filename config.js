@@ -52,8 +52,7 @@ module.exports = {
     bash: {
       summary: props(),
       'linux-distro-build': props(),
-      projects: {
-     },
+      projects: {},
     },
     linux: {
       summary: props({
@@ -92,6 +91,11 @@ module.exports = {
       assets: props({
         desc: 'assets used for both node, vue and fe'
       }),
+      toolbox: {
+        'git-admin': props({
+          desc: 'manage git repo by code written by node'
+        }),
+      },
       busybox: {
         'assist-work': props({
           desc: '辅助日常开发'
@@ -100,9 +104,6 @@ module.exports = {
           groups: {
             company: ['read']
           }
-        }),
-        'git-admin': props({
-          desc: 'manage git repo by code written by node'
         }),
         'proxy-server': props({
           desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发，使用ts开发'

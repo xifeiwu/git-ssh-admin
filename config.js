@@ -232,7 +232,12 @@ module.exports = {
     },
     huffie: {
       huffie: props(),
-      blog: props(),
+      blog: props({
+        desc: '基于jekyll的blog，将会被blogs代替'
+      }),
+      blogs: props({
+        desc: '使用markdown语法写的，分门别类的技术总结'
+      }),
       blog_site: props(),
       company: props(),
       'xifeiwu.github.io': props()

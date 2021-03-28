@@ -235,9 +235,15 @@ module.exports = {
       blog: props({
         desc: '基于jekyll的blog，将会被blogs代替'
       }),
-      blogs: props({
-        desc: '使用markdown语法写的，分门别类的技术总结'
-      }),
+      /** 博客相关 */
+      blogs: {
+        content: props({
+          desc: '博客内容，使用markdown语法写的，分门别类的技术总结'
+        }),
+        server: props({
+          desc: '博客服务，markdown解析归类，提供访问服务。将从容和服务拆开，是为了减少内容部分的体积。'
+        }),
+      },
       blog_site: props(),
       company: props(),
       'xifeiwu.github.io': props()

@@ -3,9 +3,9 @@
 1. 基于http，ssh协议的git服务
 2. 权限过滤，用户账号认证
 
-### about file config.js
+### 关于文件config.js
 
-config.js中配置git仓库的路径，只有在配置中存在的git仓库，才能创建和访问
+config.js中配置git仓库的路径，及访问权限
 
 仓库路径规则：
 

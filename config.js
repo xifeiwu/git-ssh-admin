@@ -156,7 +156,7 @@ module.exports = {
           desc: 'node server to assist some paas logic, such as cas login'
         }),
       },
-      projects: {
+      vender: {
         'cnpmjs.org': props(),
         'angry-bird': props(),
         piaofang: props(),

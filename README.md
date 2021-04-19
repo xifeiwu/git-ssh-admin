@@ -16,6 +16,9 @@ node									// 一级目录，以node为例
 ├── toolbox								// 实现一定功能的，不依赖任何三方代码
 │   ├── git-admin						// git服务管理工具
 │   └── ...								// 等
+├── projects							// 自己开发的完成特定功能的项目
+│   ├── spa-server						// spa项目后端服务
+│   └── ...								// 等
 ├── vender								// 值得长期跟踪的优秀的三方代码
 │   ├── ws
 │   ├── git-server-by-http

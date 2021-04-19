@@ -145,7 +145,7 @@ module.exports = {
           custom: props()
         }
       },
-      server: {
+      projects: {
         'spa-server': props({
           desc: 'spa-server for paas fe'
         }),
@@ -155,11 +155,13 @@ module.exports = {
         'assist-server': props({
           desc: 'node server to assist some paas logic, such as cas login'
         }),
+        piaofang: props({
+          desc: '猫眼专业版'
+        }),
       },
       vender: {
         'cnpmjs.org': props(),
         'angry-bird': props(),
-        piaofang: props(),
         'shadowsocks-lite': props(),
         'forever-monitor': props(),
         ws: props(),

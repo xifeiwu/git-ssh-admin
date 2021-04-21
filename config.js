@@ -88,7 +88,7 @@ module.exports = {
           desc: '学习ts语法'
         }),
       },
-      vender: {
+      vendor: {
         'cnpmjs.org': props(),
         'angry-bird': props(),
         'shadowsocks-lite': props(),

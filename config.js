@@ -88,9 +88,34 @@ module.exports = {
           desc: '学习ts语法'
         }),
       },
-      assets: props({
-        desc: 'assets used for both node, vue and fe'
-      }),
+      vender: {
+        'cnpmjs.org': props(),
+        'angry-bird': props(),
+        'shadowsocks-lite': props(),
+        'forever-monitor': props(),
+        ws: props(),
+        socksv5: props(),
+        forge: props(),
+        snabbdom: props(),
+        vue: props(),
+        ssh2: props({
+          desc: 'show the logic of ssh2'
+        }),
+      },
+      projects: {
+        'spa-server': props({
+          desc: 'spa-server for paas fe'
+        }),
+        'paas-assist': props({
+          desc: '高乐天创建的一个eggjs项目，可以参考typescript及模块分割部分，可以删除'
+        }),
+        'assist-server': props({
+          desc: 'node server to assist some paas logic, such as cas login'
+        }),
+        piaofang: props({
+          desc: '猫眼专业版'
+        }),
+      },
       toolbox: {
         'git-admin': props({
           desc: 'manage git repo by code written by node'
@@ -113,6 +138,9 @@ module.exports = {
       'node-server': props(),
       'assist-server-paas': props({
         desc: 'a ssr project with both server and fe'
+      }),
+      assets: props({
+        desc: 'assets used for both node, vue and fe'
       }),
       modules: {
         'koa-md-parser': props(),
@@ -145,34 +173,6 @@ module.exports = {
           custom: props()
         }
       },
-      projects: {
-        'spa-server': props({
-          desc: 'spa-server for paas fe'
-        }),
-        'paas-assist': props({
-          desc: '高乐天创建的一个eggjs项目，可以参考typescript及模块分割部分，可以删除'
-        }),
-        'assist-server': props({
-          desc: 'node server to assist some paas logic, such as cas login'
-        }),
-        piaofang: props({
-          desc: '猫眼专业版'
-        }),
-      },
-      vender: {
-        'cnpmjs.org': props(),
-        'angry-bird': props(),
-        'shadowsocks-lite': props(),
-        'forever-monitor': props(),
-        ws: props(),
-        socksv5: props(),
-        forge: props(),
-        snabbdom: props(),
-        vue: props(),
-        ssh2: props({
-          desc: 'show the logic of ssh2'
-        }),
-      }
     },
     fe: {
       website: props(),

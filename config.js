@@ -116,6 +116,11 @@ module.exports = {
           desc: '猫眼专业版'
         }),
       },
+      webpack: {
+        ruanyf: props({
+          desc: 'webpack基础展示：https://github.com/ruanyf/webpack-demos'
+        }),
+      },
       toolbox: {
         'git-admin': props({
           desc: 'manage git repo by code written by node'
@@ -134,7 +139,6 @@ module.exports = {
           desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发，使用ts开发'
         }),
       },
-      'webpack-demo': props(),
       'node-server': props(),
       'assist-server-paas': props({
         desc: 'a ssr project with both server and fe'

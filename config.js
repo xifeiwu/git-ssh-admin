@@ -117,8 +117,8 @@ module.exports = {
         }),
       },
       webpack: {
-        ruanyf: props({
-          desc: 'webpack基础展示：https://github.com/ruanyf/webpack-demos'
+        start: props({
+          desc: 'webpack基础展示，基于项目：https://github.com/ruanyf/webpack-demos'
         }),
       },
       toolbox: {

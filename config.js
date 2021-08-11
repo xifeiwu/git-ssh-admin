@@ -98,6 +98,7 @@ module.exports = {
         forge: props(),
         snabbdom: props(),
         vue: props(),
+        axios: props(),
         ssh2: props({
           desc: 'show the logic of ssh2'
         }),

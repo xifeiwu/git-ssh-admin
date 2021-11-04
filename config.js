@@ -263,6 +263,9 @@ module.exports = {
       docs: props({
         desc: 'api接口相关：接口描述；接口数据moack，接口调用等；mail项目总结文档，代码片段等'
       }),
+      assist: props({
+        desc: '辅助接口调用，实现特定逻辑'
+      }),
       nginx: {
        d1: props({
          desc: 'd1服务器10.12.6.10上nginx的配置'

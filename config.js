@@ -153,6 +153,7 @@ module.exports = {
         formidable: props(),
         'dom-align': props(),
         'impress.js': props(),
+        'aws4': props(),
         'markdown-it': props(),
       },
       vue: {

@@ -262,6 +262,14 @@ module.exports = {
       docs: props({
         desc: 'api接口相关：接口描述；接口数据moack，接口调用等；mail项目总结文档，代码片段等'
       }),
+      nginx: {
+       d1: props({
+         desc: 'd1服务器10.12.6.10上nginx的配置'
+       }),
+       desktop: props({
+        desc: '台式机10.46.0.73上nginx的配置'
+       })
+      },
     },
     finup: {
       benew: props(),

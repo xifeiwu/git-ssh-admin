@@ -53,6 +53,11 @@ module.exports = {
       summary: props(),
       'linux-distro-build': props(),
       projects: {},
+      vendor: {
+        'acme.sh': props({
+          desc: '实现https签名的开源项目，并有代码添加',
+        })
+      },
     },
     linux: {
       summary: props({

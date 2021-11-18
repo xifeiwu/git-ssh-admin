@@ -52,7 +52,7 @@ module.exports = {
     bash: {
       summary: props(),
       'linux-distro-build': props(),
-      projects: {},
+      project: {},
       vendor: {
         'acme.sh': props({
           desc: '实现https签名的开源项目，并有代码添加',
@@ -108,7 +108,7 @@ module.exports = {
           desc: 'show the logic of ssh2'
         }),
       },
-      projects: {
+      project: {
         'spa-server': props({
           desc: 'spa-server for paas fe'
         }),

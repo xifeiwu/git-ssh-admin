@@ -152,7 +152,7 @@ module.exports = {
       assets: props({
         desc: 'assets used for both node, vue and fe'
       }),
-      modules: {
+      module: {
         'koa-md-parser': props(),
         'nirvana-logger': props(),
         formidable: props(),

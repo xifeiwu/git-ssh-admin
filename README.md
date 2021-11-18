@@ -29,3 +29,11 @@ node								// 一级目录，以node为例
 │   ├── git-admin					// git服务管理工具
 │   └── ...							// 等
 └── ...								// 其它自定义文件夹
+
+### 关于acme
+
+acme.sh是一个开源的实现的https签名的项目，它通过调用dns提供的接口，在指定域名上加上TXT信息，并进行校验，证明域名所有权后，Let's Encrypt进行签名并返回证书。
+
+相关项目：
+bash/vendor/acme.sh，fork自github，添加了”在指定域名上加上TXT信息“的逻辑
+pwrd/assist，提供了金山云88dev.cn dns的接口调用，通过node_module axios进行网络请求

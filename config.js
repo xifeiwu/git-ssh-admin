@@ -138,9 +138,6 @@ module.exports = {
             company: ['read']
           }
         }),
-        'proxy-server': props({
-          desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发，使用ts开发'
-        }),
       },
       'node-server': props(),
       'assist-server-paas': props({
@@ -267,6 +264,9 @@ module.exports = {
       }),
       assist: props({
         desc: '辅助接口调用，实现特定逻辑'
+      }),
+      'proxy-server': props({
+        desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发，使用ts开发'
       }),
       nginx: {
        d1: props({

@@ -133,9 +133,6 @@ module.exports = {
         }),
       },
       busybox: {
-        'assist-work': props({
-          desc: '辅助日常开发'
-        }),
         busybox: props({
           groups: {
             company: ['read']

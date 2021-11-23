@@ -265,6 +265,12 @@ module.exports = {
       docs: props({
         desc: 'api接口相关：接口描述；接口数据moack，接口调用等；mail项目总结文档，代码片段等'
       }),
+      zhuanzhu: props({
+        desc: 'plan+前端项目'
+      }),
+      mail: props({
+        desc: '邮箱前端项目'
+      }),
       'proxy-server': props({
         desc: '定制的代理服务，用于辅助完美邮箱前端vue项目开发，使用ts开发'
       }),

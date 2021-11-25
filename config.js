@@ -183,13 +183,21 @@ module.exports = {
       },
     },
     fe: {
-      website: props(),
+      website: props({
+        desc: '个人主页node服务端，可以通过config文件灵活配置'
+      }),
       calendar: props(),
-      sage: props(),
+      sage: props({
+        desc: '哲对话项目，需要后端接口，可以使用assist-server提供的接口'
+      }),
       'zhangxueli.site': props(),
-      'show-case': props(),
+      'show-case': props({
+        desc: '浏览器功能展示'
+      }),
       art: {
-        'generate-iconfont': props()
+        'generate-iconfont': props({
+          desc: '生成字体'
+        })
       }
     },
     chrome: {

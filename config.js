@@ -154,6 +154,7 @@ module.exports = {
         'impress.js': props(),
         'aws4': props(),
         'markdown-it': props(),
+        'koa-static-cache': props(),
       },
       vue: {
         'vue_abc': props({

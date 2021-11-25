@@ -138,9 +138,6 @@ module.exports = {
             company: ['read']
           }
         }),
-        assist: props({
-          desc: '辅助接口调用，实现特定逻辑'
-        }),
       },
       'node-server': props(),
       'assist-server-paas': props({

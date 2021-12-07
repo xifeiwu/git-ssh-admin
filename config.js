@@ -284,9 +284,6 @@ module.exports = {
        d1: props({
          desc: 'd1服务器10.12.6.10上nginx的配置'
        }),
-       '51': props({
-         desc: '51服务器(专注咖啡测试环境10.3.250.51)上nginx的配置'
-       }),
        desktop: props({
         desc: '台式机10.46.0.73上nginx的配置'
        })
